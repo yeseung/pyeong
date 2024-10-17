@@ -37,6 +37,13 @@
             border-color: #4CAF50;
         }
         
+        .button-container {
+            display: flex;
+            justify-content: center; /* Center the buttons */
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line if necessary */
+            margin-bottom: 20px; /* Space below the buttons */
+        }
+        
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -64,13 +71,14 @@
         <input type="number" id="pyeongInput" placeholder="평 입력" onkeyup="convertFromPyeong()">
     </div>
     
-    <button type="button" onclick="return printAreaBtn(113);">113㎡</button>
-    <button type="button" onclick="return printAreaBtn(101);">101㎡</button>
-    <button type="button" onclick="return printAreaBtn(84);">84㎡</button>
-    <button type="button" onclick="return printAreaBtn(74);">74㎡</button>
-    <button type="button" onclick="return printAreaBtn(59);">59㎡</button>
-    <button type="button" onclick="return printAreaBtn(0);">0㎡</button>
-
+    <div class="button-container">
+        <button type="button" onclick="return printAreaBtn(113);">113㎡</button>
+        <button type="button" onclick="return printAreaBtn(101);">101㎡</button>
+        <button type="button" onclick="return printAreaBtn(84);">84㎡</button>
+        <button type="button" onclick="return printAreaBtn(74);">74㎡</button>
+        <button type="button" onclick="return printAreaBtn(59);">59㎡</button>
+        <button type="button" onclick="return printAreaBtn(0);">0㎡</button>
+    </div>
 
     <script>
         const conversionFactor = 3.3058;
