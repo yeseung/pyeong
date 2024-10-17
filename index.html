@@ -36,6 +36,21 @@
         input:focus {
             border-color: #4CAF50;
         }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +63,14 @@
         <label for="pyeongInput">평</label>
         <input type="number" id="pyeongInput" placeholder="평 입력" onkeyup="convertFromPyeong()">
     </div>
+    
+    <button type="button" onclick="return printAreaBtn(113);">113㎡</button>
+    <button type="button" onclick="return printAreaBtn(101);">101㎡</button>
+    <button type="button" onclick="return printAreaBtn(84);">84㎡</button>
+    <button type="button" onclick="return printAreaBtn(74);">74㎡</button>
+    <button type="button" onclick="return printAreaBtn(59);">59㎡</button>
+    <button type="button" onclick="return printAreaBtn(0);">0㎡</button>
+
 
     <script>
         const conversionFactor = 3.3058;
@@ -62,6 +85,11 @@
             const pyeongInput = document.getElementById("pyeongInput").value;
             const squareMeter = pyeongInput * conversionFactor;
             document.getElementById("squareMeterInput").value = squareMeter ? squareMeter.toFixed(3) : '';
+        }
+        
+        function printAreaBtn(squareMeters) {
+            document.getElementById("squareMeterInput").value = squareMeters;
+            convertFromSquareMeter();
         }
     </script>
 </body>
